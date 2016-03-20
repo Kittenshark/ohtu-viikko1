@@ -110,62 +110,19 @@ public class VarastoTest {
         
         assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
     }
-
-    /**
-     * Test of getSaldo method, of class Varasto.
-     */
+    
     @Test
-    public void testGetSaldo() {
-        System.out.println("getSaldo");
-        Varasto instance = null;
-        double expResult = 0.0;
-        double result = instance.getSaldo();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getTilavuus method, of class Varasto.
-     */
-    @Test
-    public void testGetTilavuus() {
-        System.out.println("getTilavuus");
-        Varasto instance = null;
-        double expResult = 0.0;
-        double result = instance.getTilavuus();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of paljonkoMahtuu method, of class Varasto.
-     */
-    @Test
-    public void testPaljonkoMahtuu() {
-        System.out.println("paljonkoMahtuu");
-        Varasto instance = null;
-        double expResult = 0.0;
-        double result = instance.paljonkoMahtuu();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    @Test
-    public void testToString() {
-        System.out.println("toString");
-        Varasto instance = null;
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void negatiivinenLisäysEiMuutaVarastonSaldoa() {
+        varasto.lisaaVarastoon(-1);
+        
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
     }
     
     @Test
-    public void saldoEioleVähemmänKuinNolla() {
+    public void negatiivinenOttoEiMuutaVarastonSaldoa() {
+        varasto.otaVarastosta(-3);
         
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
     }
+
 }
