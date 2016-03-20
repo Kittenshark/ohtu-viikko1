@@ -102,6 +102,14 @@ public class VarastoTest {
         
         assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
     }
+    
+    @Test
+    public void varastostaEiVoiOttaaLiikaa() {
+        varasto.lisaaVarastoon(2);
+        varasto.otaVarastosta(3);
+        
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
 
     /**
      * Test of getSaldo method, of class Varasto.
@@ -145,37 +153,6 @@ public class VarastoTest {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of lisaaVarastoon method, of class Varasto.
-     */
-    @Test
-    public void testLisaaVarastoon() {
-        System.out.println("lisaaVarastoon");
-        double maara = 0.0;
-        Varasto instance = null;
-        instance.lisaaVarastoon(maara);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of otaVarastosta method, of class Varasto.
-     */
-    @Test
-    public void testOtaVarastosta() {
-        System.out.println("otaVarastosta");
-        double maara = 0.0;
-        Varasto instance = null;
-        double expResult = 0.0;
-        double result = instance.otaVarastosta(maara);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of toString method, of class Varasto.
-     */
     @Test
     public void testToString() {
         System.out.println("toString");
@@ -185,5 +162,10 @@ public class VarastoTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void saldoEioleVähemmänKuinNolla() {
+        
     }
 }
