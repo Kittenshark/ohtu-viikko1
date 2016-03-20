@@ -1,2 +1,3 @@
 /OhtuVarasto/target/
-/OhtuVarasto/nbproject/
+/OhtuVarasto/nbproject/*.tmp
+target/
